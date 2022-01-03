@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">MadingApp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="username">Username</string>
+    <string name="login">Login</string>
+    <string name="don_t_have_account">Don\'t have Account?</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="rankhottopics">#1</string>
+    <string name="title">Title</string>
+    <string name="_31_desember_2021">31 Desember 2021</string>
+    <string name="author">Author</string>
+    <string name="description">Description</string>
+    <string name="last_name">Last Name</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="search">Search</string>
+    <string name="first_name">First Name</string>
+    <string name="birth_date">Birth Date</string>
+    <string name="madingapp">MadingApp</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="sign_in">Sign In</string>
+    <string name="create">Create</string>
+
+    <string-array name="gender">
+        <item>Male</item>
+        <item>Female</item>
+        <item>Others</item>
+    </string-array>
+</resources>

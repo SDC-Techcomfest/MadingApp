@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/argii/3D Objects/MadingApp/app/src/main/res/drawable-v24/background_button_login.xml" value="0.22205128205128205" />
+        <entry key="..\:/Users/argii/3D Objects/MadingApp/app/src/main/res/drawable-v24/background_editext_lname.xml" value="0.22205128205128205" />
+        <entry key="..\:/Users/argii/3D Objects/MadingApp/app/src/main/res/drawable-v24/background_home.xml" value="0.20989583333333334" />
+        <entry key="..\:/Users/argii/3D Objects/MadingApp/app/src/main/res/drawable-v24/background_login.xml" value="0.22205128205128205" />
+        <entry key="..\:/Users/argii/3D Objects/MadingApp/app/src/main/res/drawable-v24/background_login2.xml" value="0.22205128205128205" />
+        <entry key="..\:/Users/argii/3D Objects/MadingApp/app/src/main/res/drawable-v24/background_spinner_signup.xml" value="0.22205128205128205" />
+        <entry key="..\:/Users/argii/3D Objects/MadingApp/app/src/main/res/drawable-v24/edittext_search_home.xml" value="0.18425925925925926" />
+        <entry key="..\:/Users/argii/3D Objects/MadingApp/app/src/main/res/drawable-v24/ic_baseline_content_paste_24.xml" value="0.22205128205128205" />
+        <entry key="..\:/Users/argii/3D Objects/MadingApp/app/src/main/res/drawable-v24/ic_baseline_filter_alt_24.xml" value="0.18425925925925926" />
+        <entry key="..\:/Users/argii/3D Objects/MadingApp/app/src/main/res/font/allerta.xml" value="0.18425925925925926" />
+        <entry key="..\:/Users/argii/3D Objects/MadingApp/app/src/main/res/layout/activity_home.xml" value="0.1962962962962963" />
+        <entry key="..\:/Users/argii/3D Objects/MadingApp/app/src/main/res/layout/activity_login.xml" value="0.209375" />
+        <entry key="..\:/Users/argii/3D Objects/MadingApp/app/src/main/res/layout/activity_sign_up.xml" value="0.209375" />
+        <entry key="..\:/Users/argii/3D Objects/MadingApp/app/src/main/res/layout/fragment_home.xml" value="0.1962962962962963" />
+        <entry key="..\:/Users/argii/3D Objects/MadingApp/app/src/main/res/layout/fragment_hot_topics.xml" value="0.1962962962962963" />
+        <entry key="..\:/Users/argii/3D Objects/MadingApp/app/src/main/res/layout/fragment_profile.xml" value="0.209375" />
+        <entry key="..\:/Users/argii/3D Objects/MadingApp/app/src/main/res/layout/fragment_profile_bookmarks_mading.xml" value="0.209375" />
+        <entry key="..\:/Users/argii/3D Objects/MadingApp/app/src/main/res/layout/fragment_profile_content_mading.xml" value="0.15894039735099338" />
+        <entry key="..\:/Users/argii/3D Objects/MadingApp/app/src/main/res/layout/list_home.xml" value="0.209375" />
+        <entry key="..\:/Users/argii/3D Objects/MadingApp/app/src/main/res/layout/list_hot_topics.xml" value="0.209375" />
+        <entry key="..\:/Users/argii/3D Objects/MadingApp/app/src/main/res/layout/list_profile_book_marks_mading.xml" value="0.209375" />
+        <entry key="..\:/Users/argii/3D Objects/MadingApp/app/src/main/res/layout/list_profile_content_mading.xml" value="0.209375" />
+        <entry key="..\:/Users/argii/3D Objects/MadingApp/app/src/main/res/menu/bottom_menu.xml" value="0.1962962962962963" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Fragments.ProfileFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_gravity="center"
+        android:background="@drawable/background_home"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imgBookmarks_ProfileFragment"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/img_placeholder"
+            app:civ_border_color="@color/white"
+            app:civ_border_width="5dp" />
+
+        <TextView
+            android:id="@+id/tvName_Profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/allerta"
+            android:text="Name"
+            android:textColor="@color/white"
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/btnEdit_Profile"
+            android:layout_width="315dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rounded"
+            android:fontFamily="@font/allerta"
+            android:text="Edit"
+            android:textColor="#cfd0ff"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnLogout_Profile"
+            android:layout_width="315dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rounded"
+            android:fontFamily="@font/allerta"
+            android:text="Sign Out"
+            android:textColor="#cfd0ff"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/imgButtonContentMading_Profile"
+            android:layout_width="180dp"
+            android:layout_height="50dp"
+            android:background="@color/white"
+            android:src="@drawable/ic_baseline_content_paste_24" />
+
+        <ImageButton
+            android:id="@+id/imgButtonBookmarks_Profile"
+            android:layout_width="180dp"
+            android:layout_height="50dp"
+            android:background="@color/white"
+            android:src="@drawable/ic_baseline_bookmarks_24" />
+
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/fragmentProfile_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+</LinearLayout>

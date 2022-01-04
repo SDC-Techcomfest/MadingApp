@@ -14,7 +14,7 @@
         android:layout_marginStart="10dp"
         android:fontFamily="@font/allerta"
         android:shadowColor="@color/black"
-        android:text="@string/rankhottopics"
+        android:text="#1"
         android:textSize="30sp" />
 
     <androidx.cardview.widget.CardView
@@ -56,7 +56,7 @@
                 android:layout_marginTop="161dp"
                 android:layout_marginEnd="15dp"
                 android:fontFamily="@font/allerta"
-                android:text="@string/_31_desember_2021"
+                android:text="31 Desember 2021"
                 android:textSize="13sp" />
 
             <TextView
@@ -68,7 +68,7 @@
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="190dp"
                 android:fontFamily="@font/allerta"
-                android:text="@string/author"
+                android:text="Author"
                 android:textSize="13sp" />
 
             <TextView

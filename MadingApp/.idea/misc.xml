@@ -3,6 +3,29 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/argii/3D Objects/GitHub/MadingApp/MadingApp/app/src/main/res/drawable/background_addcomment_detailmading.xml" value="0.22552083333333334" />
+        <entry key="..\:/Users/argii/3D Objects/GitHub/MadingApp/MadingApp/app/src/main/res/drawable/background_edittext_createmading.xml" value="0.22552083333333334" />
+        <entry key="..\:/Users/argii/3D Objects/GitHub/MadingApp/MadingApp/app/src/main/res/drawable/background_spinner_createmading.xml" value="0.22552083333333334" />
+        <entry key="..\:/Users/argii/3D Objects/GitHub/MadingApp/MadingApp/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.22552083333333334" />
+        <entry key="..\:/Users/argii/3D Objects/GitHub/MadingApp/MadingApp/app/src/main/res/drawable/ic_baseline_bookmark_24.xml" value="0.10520833333333333" />
+        <entry key="..\:/Users/argii/3D Objects/GitHub/MadingApp/MadingApp/app/src/main/res/drawable/ic_baseline_report_problem_24.xml" value="0.20989583333333334" />
+        <entry key="..\:/Users/argii/3D Objects/GitHub/MadingApp/MadingApp/app/src/main/res/drawable/ic_baseline_send_24.xml" value="0.22552083333333334" />
+        <entry key="..\:/Users/argii/3D Objects/GitHub/MadingApp/MadingApp/app/src/main/res/drawable/ic_baseline_thumb_down_24.xml" value="0.22552083333333334" />
+        <entry key="..\:/Users/argii/3D Objects/GitHub/MadingApp/MadingApp/app/src/main/res/layout/activity_create_mading.xml" value="0.209375" />
+        <entry key="..\:/Users/argii/3D Objects/GitHub/MadingApp/MadingApp/app/src/main/res/layout/activity_detail_mading.xml" value="0.22" />
+        <entry key="..\:/Users/argii/3D Objects/GitHub/MadingApp/MadingApp/app/src/main/res/layout/activity_edit_profile.xml" value="0.209375" />
+        <entry key="..\:/Users/argii/3D Objects/GitHub/MadingApp/MadingApp/app/src/main/res/layout/activity_home.xml" value="0.1828125" />
+        <entry key="..\:/Users/argii/3D Objects/GitHub/MadingApp/MadingApp/app/src/main/res/layout/activity_sign_up.xml" value="0.19375" />
+        <entry key="..\:/Users/argii/3D Objects/GitHub/MadingApp/MadingApp/app/src/main/res/layout/fragment_home.xml" value="0.209375" />
+        <entry key="..\:/Users/argii/3D Objects/GitHub/MadingApp/MadingApp/app/src/main/res/layout/fragment_hot_topics.xml" value="0.18732525629077354" />
+        <entry key="..\:/Users/argii/3D Objects/GitHub/MadingApp/MadingApp/app/src/main/res/layout/fragment_profile.xml" value="0.1828125" />
+        <entry key="..\:/Users/argii/3D Objects/GitHub/MadingApp/MadingApp/app/src/main/res/layout/fragment_profile_bookmarks_mading.xml" value="0.1828125" />
+        <entry key="..\:/Users/argii/3D Objects/GitHub/MadingApp/MadingApp/app/src/main/res/layout/fragment_profile_content_mading.xml" value="0.1828125" />
+        <entry key="..\:/Users/argii/3D Objects/GitHub/MadingApp/MadingApp/app/src/main/res/layout/list_comment_detailmading.xml" value="0.209375" />
+        <entry key="..\:/Users/argii/3D Objects/GitHub/MadingApp/MadingApp/app/src/main/res/layout/list_home.xml" value="0.209375" />
+        <entry key="..\:/Users/argii/3D Objects/GitHub/MadingApp/MadingApp/app/src/main/res/layout/list_hot_topics.xml" value="0.1828125" />
+        <entry key="..\:/Users/argii/3D Objects/GitHub/MadingApp/MadingApp/app/src/main/res/layout/list_profile_book_marks_mading.xml" value="0.209375" />
+        <entry key="..\:/Users/argii/3D Objects/GitHub/MadingApp/MadingApp/app/src/main/res/layout/list_profile_content_mading.xml" value="0.209375" />
         <entry key="..\:/Users/argii/3D Objects/MadingApp/app/src/main/res/drawable-v24/background_button_login.xml" value="0.22205128205128205" />
         <entry key="..\:/Users/argii/3D Objects/MadingApp/app/src/main/res/drawable-v24/background_editext_lname.xml" value="0.22205128205128205" />
         <entry key="..\:/Users/argii/3D Objects/MadingApp/app/src/main/res/drawable-v24/background_home.xml" value="0.20989583333333334" />

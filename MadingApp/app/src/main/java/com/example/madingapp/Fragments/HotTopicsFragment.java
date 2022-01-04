@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -41,6 +42,7 @@ public class HotTopicsFragment extends Fragment {
     private Helper helper;
     private RecyclerView recyclerView;
     private HotTopicsAdapter adapter;
+    private SwipeRefreshLayout swipeRefreshLayout;
 
     private List<MadingResponse.Data> madingLists = new ArrayList<>();
 
@@ -80,10 +82,25 @@ public class HotTopicsFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_hot_topics, container, false);
         helper = new Helper(getContext());
         recyclerView = (RecyclerView) view.findViewById(R.id.idRecyclerView_HotTopics);
+        swipeRefreshLayout = view.findViewById(R.id.idSwipeRefresh_HotTopics);
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                swipeRefreshLayout.setRefreshing(true);
+                setUpAdapter();
+                getMading();
+                swipeRefreshLayout.setRefreshing(false);
+            }
+        });
 
+        return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
         setUpAdapter();
         getMading();
-        return view;
     }
 
     private void getMading() {

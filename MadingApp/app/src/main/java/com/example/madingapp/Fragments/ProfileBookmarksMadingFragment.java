@@ -87,7 +87,7 @@ public class ProfileBookmarksMadingFragment extends Fragment {
 
     private void getMading() {
         helper.showProgressDialog(getContext());
-        ApiService.endPoint().bookMarkGet().enqueue(new Callback<BookMarkResponse>() {
+        ApiService.endPoint().bookmarkMyBookmarksGet().enqueue(new Callback<BookMarkResponse>() {
             @Override
             public void onResponse(Call<BookMarkResponse> call, Response<BookMarkResponse> response) {
                 helper.dismissProgressDialog();

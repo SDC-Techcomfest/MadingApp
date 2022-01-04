@@ -1,5 +1,6 @@
 package com.example.madingapp.Fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -13,6 +14,8 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.madingapp.Activities.CreateMadingActivity;
+import com.example.madingapp.Activities.EditProfileActivity;
 import com.example.madingapp.Helper;
 import com.example.madingapp.R;
 import com.example.madingapp.Retrofit.ApiService;
@@ -41,7 +44,7 @@ public class ProfileFragment extends Fragment {
     private String mParam2;
     private ImageView imgMading;
     private TextView tvName;
-    private Button btnSignOut, btnEdit;
+    private Button btnSignOut, btnEdit, btnCreateMading;
     private ImageButton imgBtnContentMading, imgBtnBookmarks;
     private FragmentManager fragmentManager;
     private Fragment fragment;
@@ -87,6 +90,7 @@ public class ProfileFragment extends Fragment {
         btnSignOut = view.findViewById(R.id.btnLogout_Profile);
         imgBtnBookmarks = view.findViewById(R.id.imgButtonBookmarks_Profile);
         imgBtnContentMading = view.findViewById(R.id.imgButtonContentMading_Profile);
+        btnCreateMading = view.findViewById(R.id.btnCreateMading_Profile);
 
         setUserProfile();
 
@@ -94,7 +98,15 @@ public class ProfileFragment extends Fragment {
             if (Helper.TOKEN == null) {
                 helper.showMessage("Please Login first!");
             } else {
+                startActivity(new Intent(getContext(), EditProfileActivity.class));
+            }
+        });
 
+        btnCreateMading.setOnClickListener(v -> {
+            if (Helper.TOKEN == null) {
+                helper.showMessage("Please Login first!");
+            } else {
+                startActivity(new Intent(getContext(), CreateMadingActivity.class));
             }
         });
 

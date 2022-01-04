@@ -6,9 +6,9 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -19,7 +19,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.madingapp.Activities.HomeActivity;
+import com.example.madingapp.Activities.DetailMadingActivity;
 import com.example.madingapp.Activities.LoginActivity;
 import com.example.madingapp.Adapters.HomeAdapter;
 import com.example.madingapp.Helper;
@@ -31,7 +31,6 @@ import com.example.madingapp.Retrofit.ApiService;
 import java.util.ArrayList;
 import java.util.List;
 
-import nl.joery.animatedbottombar.AnimatedBottomBar;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -61,7 +60,7 @@ public class HomeFragment extends Fragment {
     private HomeAdapter adapter;
     private EditText edtSearch;
     private TextView tvUserName, tvHello, tvLogin;
-
+    private SwipeRefreshLayout swipeRefreshLayout;
 
     private List<MadingResponse.Data> madingLists = new ArrayList<>();
 
@@ -106,6 +105,7 @@ public class HomeFragment extends Fragment {
         tvUserName = (TextView) view.findViewById(R.id.tvName_Home);
         tvLogin = (TextView) view.findViewById(R.id.tvLogin_Home);
         tvHello = (TextView) view.findViewById(R.id.tvHello_Home);
+        swipeRefreshLayout = view.findViewById(R.id.idSwipeRefresh_Home);
 
         if (Helper.TOKEN == null) {
             tvHello.setVisibility(View.GONE);
@@ -129,8 +129,15 @@ public class HomeFragment extends Fragment {
         edtSearch = (EditText) view.findViewById(R.id.edtSearch_Home);
         recyclerView = (RecyclerView) view.findViewById(R.id.idRecyclerView_Home);
 
-        setUpAdapter();
-        getMading();
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                swipeRefreshLayout.setRefreshing(true);
+                setUpAdapter();
+                getMading();
+                swipeRefreshLayout.setRefreshing(false);
+            }
+        });
 
         edtSearch.addTextChangedListener(new TextWatcher() {
             @Override
@@ -152,6 +159,21 @@ public class HomeFragment extends Fragment {
         return view;
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        setUpAdapter();
+        getMading();
+
+        if (Helper.TOKEN != null) {
+            tvHello.setVisibility(View.VISIBLE);
+            tvUserName.setVisibility(View.VISIBLE);
+            tvLogin.setVisibility(View.GONE);
+            getUserImage();
+            getUserProfile();
+        }
+    }
+
     private void getMading() {
         helper.showProgressDialog(getContext());
         ApiService.endPoint().madingGet().enqueue(new Callback<MadingResponse>() {
@@ -160,7 +182,6 @@ public class HomeFragment extends Fragment {
                 helper.dismissProgressDialog();
                 if (response.isSuccessful()) {
                     List<MadingResponse.Data> dataList = response.body().getData();
-                    Helper.searchMadings = dataList;
                     adapter.setData(dataList);
                 }
             }
@@ -177,12 +198,16 @@ public class HomeFragment extends Fragment {
         adapter = new HomeAdapter(madingLists, new HomeAdapter.onClickAdapter() {
             @Override
             public void onClick(MadingResponse.Data data) {
-                Intent i = new Intent(getActivity(), LoginActivity.class);
+                Intent i = new Intent(getActivity(), DetailMadingActivity.class);
                 i.putExtra("ID", data.getMadingId());
                 i.putExtra("TITLE", data.getTitle());
                 i.putExtra("DESCRIPTION", data.getDescription());
                 i.putExtra("MADING_IMAGE", data.getMadingImage());
                 i.putExtra("CREATED_DATE", data.getCreatedDate());
+                i.putExtra("AUTHOR", data.getAuthors());
+                i.putExtra("LIKE", data.getLikes());
+                i.putExtra("DISLIKE", data.getDislikes());
+                i.putExtra("AUTHOR_IMAGE", data.getAuthorImage());
                 startActivity(i);
             }
         });
@@ -198,6 +223,7 @@ public class HomeFragment extends Fragment {
             public void onResponse(Call<MeResponse> call, Response<MeResponse> response) {
                 MeResponse.Data us = response.body().getData();
                 tvUserName.setText(us.getFirstName());
+                Helper.userId = us.userId;
                 Helper.firstNameUserLogin = us.firstName;
                 Helper.lastNameUserLogin = us.lastName;
                 Helper.imageProfileUserLogin = us.userImage;

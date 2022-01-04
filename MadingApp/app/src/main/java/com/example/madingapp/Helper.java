@@ -13,14 +13,15 @@ public class Helper {
 
     // BASE URL API
     public static final int API_VERSION = 1;
-    public static String BASE_URL = "http://192.168.0.119:5000/";
+    public static String BASE_URL = "http://172.22.2.36:5000/";
 
     // Initialize Variable
     public static String TOKEN = null;
     public static String firstNameUserLogin = null;
+    public static String userId = null;
     public static String lastNameUserLogin = null;
     public static String imageProfileUserLogin = null;
-    public static List<MadingResponse.Data> searchMadings = new ArrayList<>();
+    public  static  String userPasswordLogin = null;
 
     private Context context;
     private ProgressDialog progressDialog;
@@ -32,6 +33,7 @@ public class Helper {
     public static void refreshUserLogin() {
         firstNameUserLogin = null;
         lastNameUserLogin = null;
+        userId = null;
         imageProfileUserLogin = null;
         TOKEN = null;
     }

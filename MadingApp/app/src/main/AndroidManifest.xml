@@ -3,6 +3,9 @@
     package="com.example.madingapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" />
 
     <application
         android:allowBackup="true"
@@ -13,20 +16,33 @@
         android:theme="@style/Theme.MadingApp"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Activities.EditProfileActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activities.CreateMadingActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activities.DetailMadingActivity"
+            android:exported="true"
+            android:parentActivityName=".Activities.HomeActivity" />
+        <activity
             android:name=".Activities.SignUpActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".Activities.LoginActivity" />
         <activity
             android:name=".Activities.LoginActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Activities.HomeActivity"
-            android:exported="true">
+            android:exported="true"
+            android:parentActivityName=".Activities.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Activities.HomeActivity"
+            android:exported="false"
+            android:parentActivityName=".Activities.LoginActivity" />
     </application>
 
 </manifest>

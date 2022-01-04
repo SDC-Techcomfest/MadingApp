@@ -62,6 +62,7 @@ public class MadingResponse {
         private int reportCount;
         private String createdBy;
         private String authors;
+        private String  authorImage;
         private String createdDate;
         private String modifiedBy;
         private String modifiedDate;
@@ -178,6 +179,14 @@ public class MadingResponse {
             this.modifiedDate = modifiedDate;
         }
 
+        public String getAuthorImage() {
+            return authorImage;
+        }
+
+        public void setAuthorImage(String authorImage) {
+            this.authorImage = authorImage;
+        }
+
         @Override
         public String toString() {
             return "Data{" +
@@ -192,6 +201,7 @@ public class MadingResponse {
                     ", reportCount=" + reportCount +
                     ", createdBy='" + createdBy + '\'' +
                     ", authors='" + authors + '\'' +
+                    ", authorImage='" + authorImage + '\'' +
                     ", createdDate='" + createdDate + '\'' +
                     ", modifiedBy='" + modifiedBy + '\'' +
                     ", modifiedDate='" + modifiedDate + '\'' +

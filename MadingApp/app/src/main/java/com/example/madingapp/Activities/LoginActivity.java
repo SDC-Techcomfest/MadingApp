@@ -42,6 +42,9 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin = findViewById(R.id.btnLogin_Login);
         tvSignUp = findViewById(R.id.tvSignUp_Login);
 
+        edtUsername.setText("string");
+        edtPassword.setText("string");
+
         tvSignUp.setOnClickListener(view -> {
             startActivity(new Intent(LoginActivity.this, SignUpActivity.class));
         });
@@ -71,7 +74,6 @@ public class LoginActivity extends AppCompatActivity {
                 if (response.isSuccessful()) {
                     Helper.TOKEN = response.body().getData();
                     startActivity(new Intent(LoginActivity.this, HomeActivity.class));
-                    finish();
                 } else {
                     if (response.code() == HttpURLConnection.HTTP_NOT_FOUND) {
                         helper.showMessage("Invalid Username or Password!");

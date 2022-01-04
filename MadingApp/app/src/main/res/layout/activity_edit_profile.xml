@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activities.EditProfileActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@+id/btnback_EditProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:background="#00000000"
+            android:src="@drawable/ic_baseline_arrow_back_24" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/allerta"
+            android:gravity="center"
+            android:maxLength="20"
+            android:text="Edit Profile"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imageprofile_EditProfile"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:src="@drawable/img_placeholder" />
+
+        <Button
+            android:id="@+id/btnSelectImage_EditProfile"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/rounded"
+            android:fontFamily="@font/allerta"
+            android:text="Select Photo"
+            android:textColor="#cfd0ff"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/fname_EditProfile"
+            android:layout_width="310dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/edit_text_login"
+            android:fontFamily="@font/allerta"
+            android:gravity="center"
+            android:hint="@string/first_name"
+            android:inputType="text"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/lname_EditProfile"
+            android:layout_width="310dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/edit_text_login"
+            android:fontFamily="@font/allerta"
+            android:gravity="center"
+            android:hint="@string/last_name"
+            android:inputType="text"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/changePassword_EditProfile"
+            android:layout_width="315dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="75dp"
+            android:background="@drawable/rounded"
+            android:fontFamily="@font/allerta"
+            android:text="@string/change_password"
+            android:textColor="#cfd0ff"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/Save_EditProfile"
+            android:layout_width="315dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rounded"
+            android:fontFamily="@font/allerta"
+            android:text="Save"
+            android:textColor="#cfd0ff"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</LinearLayout>

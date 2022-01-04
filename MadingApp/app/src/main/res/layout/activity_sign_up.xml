@@ -145,7 +145,7 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/btnLogin_Login"
+            android:id="@+id/btnCreate_SignUp"
             android:layout_width="310dp"
             android:layout_height="45dp"
             android:background="@drawable/background_button_login"

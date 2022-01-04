@@ -35,7 +35,6 @@ public interface ApiEndPoint {
     @Multipart
     @PUT(apiVersion + "users")
     Call<ResponseBody> userPut(@Part("UserId") RequestBody title,
-                                  @Part("Username") RequestBody username,
                                   @Part("Firstname") RequestBody firstName,
                                   @Part("Lastname") RequestBody lastName,
                                   @Part("UserImage\"; filename=\"image.png") RequestBody fileImage);

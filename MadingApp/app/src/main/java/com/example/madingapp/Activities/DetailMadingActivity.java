@@ -33,7 +33,7 @@ public class DetailMadingActivity extends AppCompatActivity {
     private CircleImageView circleImageAuthor, circleImaeComment;
     private ImageView imgMading;
     private ImageButton imgBack, btnReport, imgLike, imgDislike;
-    private TextView tvAuthor, tvCreatedDate, tvTitle, tvDesc, tvLikes, tvDislikes;
+    private TextView tvAuthor, tvCreatedDate, tvTitle, tvDesc, tvLikes, tvDislikes, tvShowAllComment;
     private EditText edtAddComment;
 
     @Override
@@ -66,6 +66,7 @@ public class DetailMadingActivity extends AppCompatActivity {
         btnReport = (ImageButton) findViewById(R.id.report_DetailMading);
         imgLike = (ImageButton) findViewById(R.id.like_DetailMading);
         imgDislike = (ImageButton) findViewById(R.id.dislike_DetailMading);
+        tvShowAllComment = (TextView) findViewById(R.id.tvShowAllComment_DetailMading);
 
         tvTitle.setText(title);
         tvAuthor.setText(author);
@@ -118,6 +119,10 @@ public class DetailMadingActivity extends AppCompatActivity {
 
         imgDislike.setOnClickListener(v -> {
             dislikeMading();
+        });
+
+        tvShowAllComment.setOnClickListener(v -> {
+            startActivity(new Intent(DetailMadingActivity.this, ShowAllCommentsActivity.class));
         });
     }
 

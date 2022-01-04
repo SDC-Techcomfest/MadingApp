@@ -45,7 +45,7 @@ public class EditProfileActivity extends AppCompatActivity {
     private Helper helper;
     private CircleImageView circleImageView;
     private Button btnSelectPhoto, btnChangePassword, btnSave;
-    private EditText edtFirstName, edtLastName, edtUsername;
+    private EditText edtFirstName, edtLastName;
     String firstName;
     private static final int PERMISSION_REQUEST_CODE = 1;
     private static final int REQUEST_GALLERY = 200;
@@ -93,30 +93,26 @@ public class EditProfileActivity extends AppCompatActivity {
         });
 
         btnSave.setOnClickListener(v -> {
-            firstName = edtFirstName.getText().toString().trim();
+            String firstName = edtFirstName.getText().toString().trim();
             String lastName = edtLastName.getText().toString().trim();
-            String username = edtUsername.getText().toString().trim();
-            if (firstName.isEmpty() || lastName.isEmpty() || username.isEmpty() || file_path.isEmpty()) {
-                helper.showMessage("Please fill the field!");
-            } else {
-                UploadFile(firstName, lastName, username);
-            }
+
+                UploadFile(firstName, lastName);
+
         });
     }
 
-    private void UploadFile(String firstName, String lastName, String username) {
+    private void UploadFile(String firstName, String lastName) {
         try {
             File file = new File(file_path);
             RequestBody requserId = RequestBody.create(MediaType.parse("multipart/form-data"), Helper.userId);
-            RequestBody requsername = RequestBody.create(MediaType.parse("multipart/form-data"), username);
-            RequestBody reqlastName = RequestBody.create(MediaType.parse("multipart/form-data"), lastName);
-            RequestBody reqfirstName = RequestBody.create(MediaType.parse("multipart/form-data"), firstName);
+            RequestBody reqlastName = RequestBody.create(MediaType.parse("multipart/form-data"), firstName);
+            RequestBody reqfirstName = RequestBody.create(MediaType.parse("multipart/form-data"), lastName);
             RequestBody reqImage = RequestBody.create(MediaType.parse("multipart/form-data"), file);
-            ApiService.endPoint().userPut(requserId, requsername, reqlastName, reqfirstName, reqImage).enqueue(new Callback<ResponseBody>() {
+            ApiService.endPoint().userPut(requserId, reqlastName, reqfirstName, reqImage).enqueue(new Callback<ResponseBody>() {
                 @Override
                 public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                     helper.showMessage("Successfully edit Profile!");
-                    loginApi();
+                    finish();
                 }
 
                 @Override
@@ -148,35 +144,6 @@ public class EditProfileActivity extends AppCompatActivity {
             }
             circleImageView.setImageBitmap(bitmap);
         }
-    }
-
-    private void loginApi() {
-        helper.showProgressDialog(this);
-        AuthRequest request = new AuthRequest();
-        request.setUsername(firstName);
-        request.setPassword(Helper.userPasswordLogin);
-
-        ApiService.endPoint().authLoginPost(request).enqueue(new Callback<AuthResponse>() {
-            @Override
-            public void onResponse(Call<AuthResponse> call, Response<AuthResponse> response) {
-                helper.dismissProgressDialog();
-                if (response.isSuccessful()) {
-                    Helper.refreshUserLogin();
-                    Helper.TOKEN = response.body().getData();
-                    finish();
-                } else {
-                    if (response.code() == HttpURLConnection.HTTP_NOT_FOUND) {
-                        helper.showMessage("Invalid Username or Password!");
-                    }
-                }
-            }
-
-            @Override
-            public void onFailure(Call<AuthResponse> call, Throwable t) {
-                helper.dismissProgressDialog();
-                helper.showMessage(t.getMessage());
-            }
-        });
     }
 
     public String getRealPathFromUri(Uri uri, Activity activity) {

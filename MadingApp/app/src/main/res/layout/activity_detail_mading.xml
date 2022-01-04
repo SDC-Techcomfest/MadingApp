@@ -221,5 +221,15 @@
                 android:layout_gravity="center"
                 android:src="@drawable/ic_baseline_send_24" />
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvShowAllComment_DetailMading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:fontFamily="serif"
+            android:text="Show All Comment"
+            android:textColor="@color/black" />
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

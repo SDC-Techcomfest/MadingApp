@@ -124,7 +124,12 @@ public class HotTopicsFragment extends Fragment {
     }
 
     private void setUpAdapter() {
-        adapter = new HotTopicsAdapter(madingLists);
+        adapter = new HotTopicsAdapter(madingLists, new HotTopicsAdapter.onClickAdapter() {
+            @Override
+            public void onClick(MadingResponse.Data data) {
+
+            }
+        });
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);

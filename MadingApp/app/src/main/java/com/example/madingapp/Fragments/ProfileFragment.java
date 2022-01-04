@@ -1,5 +1,7 @@
 package com.example.madingapp.Fragments;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -114,7 +116,19 @@ public class ProfileFragment extends Fragment {
             if (Helper.TOKEN == null) {
                 helper.showMessage("Please Login first!");
             } else {
-                logoutApi();
+                AlertDialog alertDialog = new AlertDialog.Builder(getContext())
+                        .setCancelable(false)
+                        .setTitle("Sign Out")
+                        .setMessage("Do you want to Sign Out?")
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                logoutApi();
+                            }
+                        })
+                        .setNegativeButton("No", null)
+                        .create();
+                alertDialog.show();
             }
         });
 

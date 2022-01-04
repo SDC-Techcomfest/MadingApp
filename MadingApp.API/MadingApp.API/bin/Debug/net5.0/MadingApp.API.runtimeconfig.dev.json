@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\SISWA\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\SISWA\\.nuget\\packages"
+    ]
+  }
+}

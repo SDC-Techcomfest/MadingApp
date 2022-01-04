@@ -2,6 +2,7 @@ package com.example.madingapp.Retrofit;
 
 import com.example.madingapp.Helper;
 import com.example.madingapp.Models.Request.AuthRequest;
+import com.example.madingapp.Models.Request.ChangePasswordRequest;
 import com.example.madingapp.Models.Request.MadingRequest;
 import com.example.madingapp.Models.Request.SignUpRequest;
 import com.example.madingapp.Models.Response.AuthResponse;
@@ -77,4 +78,7 @@ public interface ApiEndPoint {
 
     @GET(apiVersion + "madings/my-madings")
     Call<MadingResponse> madingMyMadingsGet();
+
+    @PUT(apiVersion + "users/Change Password")
+    Call<ResponseBody> changePasswordPut(@Body ChangePasswordRequest cr);
 }

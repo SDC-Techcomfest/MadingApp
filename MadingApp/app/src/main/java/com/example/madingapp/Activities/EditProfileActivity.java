@@ -63,6 +63,7 @@ public class EditProfileActivity extends AppCompatActivity {
         btnSave = findViewById(R.id.Save_EditProfile);
         edtFirstName = findViewById(R.id.fname_EditProfile);
         edtLastName = findViewById(R.id.lname_EditProfile);
+        btnChangePassword  = findViewById(R.id.changePassword_EditProfile);
        // edtUsername = findViewById(R.id.username_EditProfile);
 
         Picasso.get()
@@ -81,6 +82,13 @@ public class EditProfileActivity extends AppCompatActivity {
                 } else {
                     filePicker();
                 }
+            }
+        });
+        btnChangePassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(EditProfileActivity.this, ChangePasswordActivity.class));
+                finish();
             }
         });
 
